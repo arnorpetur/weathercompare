@@ -29,8 +29,8 @@ ALLOWED_HOSTS = []
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'arnor87@gmail.com'
-EMAIL_HOST_PASSWORD = 'Noaaus22'
+EMAIL_HOST_USER = os.environ.get('ROOT_EMAIL')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
 EMAIL_PORT = 587
 
 GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
