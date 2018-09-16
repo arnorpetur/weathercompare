@@ -20,12 +20,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '98eqj0m@-!pps8@em-*9n$cqiw1glc#ijb9qg_e#s9g9ax1ykv'
+SECRET_KEY = os.environ.get('PROJECT_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['django-weather.herokuapp.com', '127.0.0.1']
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
