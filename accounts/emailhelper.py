@@ -16,6 +16,5 @@ def get_location(request):
         ip = x_forwarded_for.split(',')[0]
     else:
         ip = request.META.get('REMOTE_ADDR')
-    print(ip)
 
-    return g.city('205.186.163.125')['city']
+    return g.city(ip)['city']
