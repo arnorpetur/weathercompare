@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="{% static 'compare/style.css' %}">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bokeh/0.13.0/bokeh.min.css" rel="stylesheet" type="text/css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/bokeh/0.13.0/bokeh-widgets.min.css" rel="stylesheet" type="text/css">
+        <title>Weather Compare</title>
+    </head>
+
+    <body>
+        <header>
+            <nav class="navbar navbar-light bg-light">
+                {% if user.is_authenticated %}
+                <span class="glyphicon glyphicon-user" aria-hidden="true" style="padding-left: 10px;"></span>
+                <h5 style="display: inline;">Logged in as {{ user.username }}</h5>
+                <form class="logout-link" action="/accounts/logout/" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
+
+                {% else %}
+                <span class="glyphicon glyphicon-log-in" aria-hidden="true" style="padding-left: 10px;"></span>
+                <a class="btn btn-success" href="/accounts/login/" role="button">Login</a>
+                <a class="btn btn-info" href="/accounts/signup/" role="button">SignUp</a>
+
+                {% endif %}
+            </nav>
+        </header>
+        <div class="col-md-1"></div>
+        <div class="col-md-11">
+            {% block content %}
+
+            {% endblock content %}
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/0.13.0/bokeh.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bokeh/0.13.0/bokeh-widgets.min.js"></script>
+    </body>
+</html>
