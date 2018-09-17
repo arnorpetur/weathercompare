@@ -6,7 +6,7 @@ import requests
 
 API_KEY = os.environ.get('WEATHER_API')
 API_URL = ('https://api.openweathermap.org/data/2.5/{}?'
-           'q={}&mode=json&units=metric&appid={}')
+           'q={}&mode=json&units=metric&appid=')
 
 DEFAULT_TIME = 'Europe/Madrid'
 TIME_FMT = '%H:%M:%S %Z%z'
@@ -32,10 +32,7 @@ def get_local_time(utstamp, country, city):
 
 def query_api(city, data_type='weather'):
     try:
-        print("===========")
-        print(API_URL.format(data_type, city, API_KEY))
-        print("===========")
-        data = requests.get(API_URL.format(data_type, city, API_KEY)).json()
+        data = requests.get(API_URL.format(data_type, city)+API_KEY).json()
     except Exception as exc:
         print(exc)
         data = None
