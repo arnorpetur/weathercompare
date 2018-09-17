@@ -1,1 +1,1 @@
-web: gunicorn limitless-castle-53407.wsgi --log-file -
+web: gunicorn limitless-castle-53407.app
