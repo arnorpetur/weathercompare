@@ -4,8 +4,8 @@ import os
 import pytz
 import requests
 
-API_KEY = '73bdd8c633a477c7a5d8aa7a413bac12'
-API_URL = ('http://api.openweathermap.org/data/2.5/{}?'
+API_KEY = os.environ.get('WEATHER_API')
+API_URL = ('https://api.openweathermap.org/data/2.5/{}?'
            'q={}&mode=json&units=metric&appid={}')
 
 DEFAULT_TIME = 'Europe/Madrid'
