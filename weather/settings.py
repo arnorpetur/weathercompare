@@ -26,7 +26,7 @@ SECRET_KEY = os.environ.get('PROJECT_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', 'limitless-castle-53407.herokuapp.com']
+ALLOWED_HOSTS = ['limitless-castle-53407.herokuapp.com', '127.0.0.1']
 
 EMAIL_USE_TLS = True
 EMAIL_HOST = 'smtp.gmail.com'
