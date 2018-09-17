@@ -31,6 +31,9 @@ def get_local_time(utstamp, country, city):
 
 
 def query_api(city, data_type='weather'):
+    print("===========================")
+    print(API_KEY)
+    print("===========================")
     try:
         data = requests.get(API_URL.format(data_type, city, API_KEY)).json()
     except Exception as exc:
