@@ -84,7 +84,7 @@ WSGI_APPLICATION = 'weather.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-"""
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
@@ -95,7 +95,7 @@ DATABASES = {
         'PORT': '5432',
     }
 }
-"""
+
 db_from_env = dj_database_url.config()
 DATABASES['default'].update(db_from_env)
 db_from_env = dj_database_url.config(conn_max_age=600)
