@@ -4,7 +4,7 @@ import os
 import pytz
 import requests
 
-API_KEY = os.environ.get('WEATHER_API')
+API_KEY = '73bdd8c633a477c7a5d8aa7a413bac12'
 API_URL = ('http://api.openweathermap.org/data/2.5/{}?'
            'q={}&mode=json&units=metric&appid={}')
 
@@ -31,9 +31,6 @@ def get_local_time(utstamp, country, city):
 
 
 def query_api(city, data_type='weather'):
-    print("===========================")
-    print(API_KEY)
-    print("===========================")
     try:
         data = requests.get(API_URL.format(data_type, city, API_KEY)).json()
     except Exception as exc:
