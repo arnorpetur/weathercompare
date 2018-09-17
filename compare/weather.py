@@ -4,7 +4,7 @@ import os
 import pytz
 import requests
 
-API_KEY = os.environ.get('WEATHER_API')
+API_KEY = '0fc0c63739b0228f3aa9b3a8ddb628be'
 API_URL = ('https://api.openweathermap.org/data/2.5/{}?'
            'q={}&mode=json&units=metric&appid=')
 
